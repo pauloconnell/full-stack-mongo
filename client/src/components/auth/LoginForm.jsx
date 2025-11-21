@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { login } from '../store/slices/authSlice'
-import { useUsers } from '../hooks/useUsers'
+import { login } from '../../store/slices/authSlice'
+import { useUsers } from '../../hooks/useUsers'
 
 function LoginForm() {
   const [selectedEmail, setSelectedEmail] = useState('')
