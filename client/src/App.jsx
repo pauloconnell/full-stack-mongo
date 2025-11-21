@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import UsersList from './components/UsersList';
-import UserForm from './components/UserForm';
-import LoginForm from './components/LoginForm';
-import TodoApp from './components/TodoApp';
-import ThemeToggle from './components/ThemeToggle';
+import UsersList from './components/users/UsersList';
+import UserForm from './components/users/UserForm';
+import LoginForm from './components/auth/LoginForm';
+import TodoApp from './components/todos/TodoApp';
+import ThemeToggle from './components/ui/ThemeToggle';
 
 function App() {
    const [count, setCount] = useState(0);
