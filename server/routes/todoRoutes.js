@@ -9,6 +9,7 @@ router.post('/users/:userId/todos', createTodo)
 
 // General todo routes
 router.put('/todos/:id', updateTodo)
+router.patch('/todos/:id', updateTodo)
 router.delete('/todos/:id', deleteTodo)
 
 export default router

@@ -61,7 +61,7 @@ export function useUpdateTodo(userId) {
   return useMutation({
     mutationFn: async ({ id, ...updates }) => {
       const res = await fetch(`${API_BASE}/todos/${id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updates)
       })
