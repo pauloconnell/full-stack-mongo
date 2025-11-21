@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { setFilters } from '../store/slices/todosSlice'
+import { setFilters } from '../../store/slices/todosSlice'
 
 const CATEGORIES = ['all', 'other', 'buy', 'fix', 'clean', 'exercise', 'research']
 const PRIORITIES = [

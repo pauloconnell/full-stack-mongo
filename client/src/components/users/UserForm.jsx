@@ -1,5 +1,5 @@
 import { Form, Input, Button, message } from 'antd';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 function UserForm() {
    const queryClient = useQueryClient();

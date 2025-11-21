@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useCreateTodo } from '../hooks/useTodos'
+import { useCreateTodo } from '../../hooks/useTodos'
 
 const CATEGORIES = ['other', 'buy', 'fix', 'clean', 'exercise', 'research']
 const PRIORITIES = [

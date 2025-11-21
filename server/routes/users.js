@@ -10,10 +10,10 @@ const router = express.Router();
 
 
 
-// GET /api/users
+// GET /api/users (exclude emails for security)
 router.get('/', async (req, res, next) => {
   try {
-    const users = await User.find().lean();
+    const users = await User.find().select('-email').lean();
     res.json(users);
   } catch (err) {
     next(err);  // or res.status(500).json({ error: err.message }) for custom error response

@@ -1,5 +1,5 @@
 import { Spin, Alert } from 'antd'
-import { useUsers } from '../hooks/useUsers'
+import { useUsers } from '../../hooks/useUsers'
 
 function UsersList() {
   const { data: users = [], isLoading, isError, error } = useUsers()
@@ -15,7 +15,6 @@ function UsersList() {
           <thead>
             <tr className="border-b border-gray-200 dark:border-gray-700">
               <th className="text-left py-2 px-4 text-gray-800 dark:text-gray-200">Name</th>
-              <th className="text-left py-2 px-4 text-gray-800 dark:text-gray-200">Email</th>
               <th className="text-left py-2 px-4 text-gray-800 dark:text-gray-200">Created</th>
             </tr>
           </thead>
@@ -23,7 +22,6 @@ function UsersList() {
             {users.map((user) => (
               <tr key={user._id} className="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                 <td className="py-2 px-4 text-gray-800 dark:text-gray-200">{user.name}</td>
-                <td className="py-2 px-4 text-gray-800 dark:text-gray-200">{user.email}</td>
                 <td className="py-2 px-4 text-gray-600 dark:text-gray-400">{new Date(user.createdAt).toLocaleString()}</td>
               </tr>
             ))}

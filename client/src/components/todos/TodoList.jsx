@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { useTodos, useUpdateTodo, useDeleteTodo } from '../hooks/useTodos'
+import { useTodos, useUpdateTodo, useDeleteTodo } from '../../hooks/useTodos'
 
 const PRIORITY_COLORS = {
   0: 'border-l-gray-400',

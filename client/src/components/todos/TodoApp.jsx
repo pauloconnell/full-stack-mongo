@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../store/slices/authSlice'
+import { logout } from '../../store/slices/authSlice'
 import TodoForm from './TodoForm'
 import TodoFilters from './TodoFilters'
 import TodoList from './TodoList'
