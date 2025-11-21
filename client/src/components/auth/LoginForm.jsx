@@ -18,7 +18,7 @@ function LoginForm() {
       setError('')
       
       try {
-        const res = await fetch('http://localhost:4000/api/auth/login', {
+        const res = await fetch('http://localhost:4000/api/auth/login', {       // no need for react Querry here - just a one time call with no caching refetching or background updates needed
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: selectedName, email })
@@ -32,7 +32,7 @@ function LoginForm() {
           setError(errorData.message || 'Login failed')
         }
       } catch (err) {
-        setError('Network error. Please try again.')
+        setError('Network error. Please try again.', err)
       } finally {
         setIsLoading(false)
       }

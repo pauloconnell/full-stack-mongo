@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import UsersList from './components/users/UsersList';
 import UserForm from './components/users/UserForm';
@@ -10,7 +8,7 @@ import TodoApp from './components/todos/TodoApp';
 import ThemeToggle from './components/ui/ThemeToggle';
 
 function App() {
-   const [count, setCount] = useState(0);
+   
    const { currentUser } = useSelector(state => state.auth);
 
    return (
