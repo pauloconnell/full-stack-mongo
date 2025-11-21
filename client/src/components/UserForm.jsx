@@ -32,11 +32,13 @@ function UserForm() {
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">
                Add User
             </h2>
-            <Form onFinish={onFinish} layout="vertical" style={{ maxWidth: 400 }}>
-               {mutation.isIdle && <p>Form not submitted yet</p>}
-               {mutation.isLoading && <p>Submitting...</p>}
-               {mutation.isError && <p>Error: {mutation.error.message}</p>}
-               {mutation.isSuccess && <p>Success! Added {mutation.data.name}</p>}
+            <Form onFinish={onFinish} layout="vertical" style={{ maxWidth: 400 }} >
+               <p className="text-gray-600 dark:text-white mb-4">
+               {mutation.isIdle && 'Form not submitted yet'}
+               {mutation.isLoading && 'Submitting...'}
+               {mutation.isError && `Error:  ${mutation.error.message}`}
+               {mutation.isSuccess && `Success! Added ${mutation.data.name}`}
+               </p>
                <Form.Item label="Name" name="name" rules={[{ required: true }]}>
                   <Input className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" />
                </Form.Item>
