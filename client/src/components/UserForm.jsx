@@ -27,30 +27,37 @@ function UserForm() {
    };
 
    return (
-      <Form onFinish={onFinish} layout="vertical" style={{ maxWidth: 400 }}>
-         {mutation.isIdle && <p>Form not submitted yet</p>}
-         {mutation.isLoading && <p>Submitting...</p>}
-         {mutation.isError && <p>Error: {mutation.error.message}</p>}
-         {mutation.isSuccess && <p>Success! Added {mutation.data.name}</p>}
-         <Form.Item label="Name" name="name" rules={[{ required: true }]}>
-            <Input />
-         </Form.Item>
-         <Form.Item
-            label="Email"
-            name="email"
-            rules={[{ required: true, type: 'email' }]}
-         >
-            <Input />
-         </Form.Item>
-         <Form.Item>
-            <Button type="primary" htmlType="submit" loading={mutation.isLoading}>
+      <div className="m-8 flex justify-center items-center">
+         <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">
                Add User
-            </Button>
-         </Form.Item>
-         {mutation.isError && (
-            <p style={{ color: 'red' }}>Something went wrong. Please try again.</p>
-         )}
-      </Form>
+            </h2>
+            <Form onFinish={onFinish} layout="vertical" style={{ maxWidth: 400 }}>
+               {mutation.isIdle && <p>Form not submitted yet</p>}
+               {mutation.isLoading && <p>Submitting...</p>}
+               {mutation.isError && <p>Error: {mutation.error.message}</p>}
+               {mutation.isSuccess && <p>Success! Added {mutation.data.name}</p>}
+               <Form.Item label="Name" name="name" rules={[{ required: true }]}>
+                  <Input className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" />
+               </Form.Item>
+               <Form.Item
+                  label="Email"
+                  name="email"
+                  rules={[{ required: true, type: 'email' }]}
+               >
+                  <Input className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" />
+               </Form.Item>
+               <Form.Item>
+                  <Button type="primary" htmlType="submit" loading={mutation.isLoading} className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" >
+                     Add User
+                  </Button>
+               </Form.Item>
+               {mutation.isError && (
+                  <p style={{ color: 'red' }}>Something went wrong. Please try again.</p>
+               )}
+            </Form>
+         </div>
+      </div>
    );
 }
 
