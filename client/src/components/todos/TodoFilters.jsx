@@ -38,6 +38,7 @@ function TodoFilters() {
                     ? 'bg-blue-500 text-white'
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
+                data-testid={`filter-${category}`}
               >
                 {category === 'all' ? 'All' : category.charAt(0).toUpperCase() + category.slice(1)}
               </button>

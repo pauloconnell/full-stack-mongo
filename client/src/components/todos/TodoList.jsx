@@ -60,6 +60,7 @@ function TodoList() {
       className={`bg-white dark:bg-gray-800 p-4 rounded-lg shadow border-l-4 ${PRIORITY_COLORS[todo.priority]} ${
         todo.completed ? 'opacity-60' : ''
       }`}
+      data-testid="todo-item"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3 flex-1">
@@ -68,6 +69,7 @@ function TodoList() {
             checked={todo.completed}
             onChange={() => handleToggleComplete(todo)}
             className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+            data-testid="todo-checkbox"
           />
           <div className="flex-1">
             <h3 className={`font-medium ${todo.completed ? 'line-through text-gray-500' : 'text-gray-800 dark:text-gray-200'}`}>
@@ -99,7 +101,7 @@ function TodoList() {
         </p>
       ) : (
         Object.entries(todosByCategory).map(([category, categoryTodos]) => (
-          <div key={category} className="space-y-3">
+          <div key={category} className="space-y-3" data-testid={`category-${category}`}>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white capitalize border-b border-gray-200 dark:border-gray-700 pb-2">
               {category} ({categoryTodos.length})
             </h3>

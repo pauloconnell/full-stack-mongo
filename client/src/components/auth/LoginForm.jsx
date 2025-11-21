@@ -46,12 +46,13 @@ function LoginForm() {
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">
         Sign In
       </h2>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} data-testid="login-form">
         <div className="mb-4">
           <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
             Select User
           </label>
           <select
+            data-testid="user-select"
             value={selectedName}
             onChange={(e) => setSelectedName(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -71,6 +72,7 @@ function LoginForm() {
             Email
           </label>
           <input
+            data-testid="email-input"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -87,6 +89,7 @@ function LoginForm() {
         )}
         
         <button
+          data-testid="login-button"
           type="submit"
           disabled={isLoading}
           className="w-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors disabled:opacity-50"

@@ -41,6 +41,7 @@ function TodoForm() {
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Add a new todo..."
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            data-testid="todo-input"
             required
           />
         </div>
@@ -50,6 +51,7 @@ function TodoForm() {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            data-testid="category-select"
           >
             {CATEGORIES.map(cat => (
               <option key={cat} value={cat}>
@@ -64,6 +66,7 @@ function TodoForm() {
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            data-testid="priority-select"
           >
             {PRIORITIES.map(p => (
               <option key={p.value} value={p.value}>
@@ -78,6 +81,7 @@ function TodoForm() {
         type="submit"
         disabled={createTodo.isLoading}
         className="mt-4 w-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors disabled:opacity-50"
+        data-testid="add-todo"
       >
         {createTodo.isLoading ? 'Adding...' : 'Add Todo'}
       </button>

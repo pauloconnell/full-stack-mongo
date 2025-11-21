@@ -11,7 +11,7 @@ function UsersList() {
     <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
       <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Users</h3>
       <div className="overflow-x-auto">
-        <table className="w-full">
+        <table className="w-full" data-testid="user-list">
           <thead>
             <tr className="border-b border-gray-200 dark:border-gray-700">
               <th className="text-left py-2 px-4 text-gray-800 dark:text-gray-200">Name</th>

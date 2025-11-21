@@ -40,17 +40,17 @@ function UserForm() {
                {mutation.isSuccess && `Success! Added ${mutation.data.name}`}
                </p>
                <Form.Item label="Name" name="name" rules={[{ required: true }]}>
-                  <Input className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" />
+                  <Input data-testid="user-name-input" className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" />
                </Form.Item>
                <Form.Item
                   label="Email"
                   name="email"
                   rules={[{ required: true, type: 'email' }]}
                >
-                  <Input className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" />
+                  <Input data-testid="user-email-input" className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md" />
                </Form.Item>
                <Form.Item>
-                  <Button type="primary" htmlType="submit" loading={mutation.isLoading} className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" >
+                  <Button data-testid="add-user-button" type="primary" htmlType="submit" loading={mutation.isLoading} className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" >
                      Add User
                   </Button>
                </Form.Item>
