@@ -14,7 +14,7 @@ app.use(express.json());
 // Allow requests from your Vite dev server
 app.use(cors({
   origin: 'http://localhost:5173',   // frontend dev server
-  methods: ['GET','POST','PUT','DELETE'],
+  methods: ['GET','POST','PUT','PATCH','DELETE'],
   credentials: true
 }))
 app.use((err, req, res, next) => {  // global error handling Middleware
