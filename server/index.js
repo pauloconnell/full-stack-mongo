@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import usersRouter from './routes/users.js';
+import todoRouter from './routes/todoRoutes.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
@@ -22,6 +23,7 @@ app.use((err, req, res, next) => {  // global error handling Middleware
 
 // mount routes
 app.use('/api/users', usersRouter);
+app.use('/api', todoRouter);
 
 
 
